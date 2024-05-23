@@ -2,7 +2,7 @@
  * @ Author: Adam Zhang
  * @ Create Time: 2024-05-20 21:18:06
  * @ Modified by: Your name
- * @ Modified time: 2024-05-22 22:08:16
+ * @ Modified time: 2024-05-22 23:28:05
  * @ Description: a progress bar 
  */
 
@@ -12,6 +12,40 @@ import moment from 'moment';
 
 // Function to run the progress bar
 export function runProgressBar(totalDuration, message) {
+    if (message === 'rest') {
+        console.log("   ___   ");
+        console.log("  //_\\_ ");
+        console.log(" .\"\\    \".  Doh! Time to rest");
+        console.log("/          \\");
+        console.log("|           \\_");
+        console.log("|       ,--.-.)");
+        console.log(" \\     /  o \\o\\");
+        console.log(" /\\/\\  \\    /_/");
+        console.log(" (_.   `--'__)");
+        console.log("   |     .-'  \\");
+        console.log("   |  .-'.     )");
+        console.log("   | (  _/--.-'");
+        console.log("   |  `.___.'");
+        console.log("         (");
+    }
+    else {
+        console.log("      /\\  /\\");
+        console.log("  ___/  \\/  \\___  \"I\'ll study so hard I\'ll make the old me look like Bart.\"");
+        console.log(" |             /");
+        console.log(" |            /_");
+        console.log(" /     \\_| \\_| /");
+        console.log("/     \\/  \\/  \\/");
+        console.log("\\     (o   )o  )");
+        console.log(" \\ /c  \\__/ --.");
+        console.log(" | \\_  ,     -'");
+        console.log(" |_ | '\\_______)");
+        console.log("   ||      _)");
+        console.log("    |     |");
+        console.log("    ooooooo");
+        console.log("   /       \\");
+
+    }
+
     const progressBar = new cliProgress.SingleBar({
         format: `{time} - {remaining} | {message} | {bar} | {percentage}% |`,
         //format: customFormatFunction,
@@ -21,6 +55,7 @@ export function runProgressBar(totalDuration, message) {
     });
     progressBar.start(totalDuration, 0);
     let elapsedSeconds = 0;
+
 
     const interval = setInterval(() => {
         elapsedSeconds += 1;
